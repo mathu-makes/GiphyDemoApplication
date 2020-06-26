@@ -1,0 +1,109 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt' // glide | http://bumptech.github.io/glide/doc/download-setup.html#kotlin | 20/05/20
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.giphy.sdk.uidemo"
+        minSdkVersion 21    //19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        android.defaultConfig.vectorDrawables.useSupportLibrary = true
+        //ndk {
+        //    abiFilters 'arm64-v8a'
+        //}
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    //needed to add this after implementing glide transformations                                   | https://github.com/wasabeef/glide-transformations/issues/130
+    packagingOptions {
+        pickFirst 'lib/armeabi-v7a/libRSSupport.so'
+        pickFirst 'lib/arm64-v8a/libRSSupport.so'
+        pickFirst 'lib/x86_64/libRSSupport.so'
+        pickFirst 'lib/x86/libRSSupport.so'
+        pickFirst 'lib/arm64-v8a/librsjni.so'
+        pickFirst 'lib/x86/librsjni.so'
+        pickFirst 'lib/x86_64/librsjni.so'
+        pickFirst 'lib/armeabi-v7a/librsjni.so'
+        pickFirst 'lib/x86_64/librsjni_androidx.so'
+        pickFirst 'lib/armeabi-v7a/librsjni_androidx.so'
+        pickFirst 'lib/x86/librsjni_androidx.so'
+        pickFirst 'lib/arm64-v8a/librsjni_androidx.so'
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation "androidx.constraintlayout:constraintlayout:1.1.3"       // +++
+    implementation "com.google.android.material:material:1.1.0"             // +++
+    implementation 'androidx.core:core-ktx:1.3.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //giphy +++
+    implementation "com.giphy.sdk:ui:1.2.8"
+    implementation "com.squareup.leakcanary:leakcanary-android:1.6.3"
+    implementation "com.github.savvyapps:ToggleButtonLayout:1.2.0"
+    implementation "androidx.gridlayout:gridlayout:1.0.0"
+
+    //glide | 20/05/20
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+
+    //flexbox
+    implementation 'com.google.android:flexbox:2.0.1'
+
+    //Matisse
+    //implementation 'com.zhihu.android:matisse:0.5.3-beta3'
+
+    //glide transformations
+    implementation 'jp.wasabeef:glide-transformations:4.1.0'
+    implementation 'jp.co.cyberagent.android:gpuimage:2.0.4'
+
+    //androidx | recyclerview-selection [1]
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    // For control over item selection of both touch and mouse driven selection
+    implementation "androidx.recyclerview:recyclerview-selection:1.1.0-rc01"
+
+    //OkHttp networking library
+    implementation("com.squareup.okhttp3:okhttp:4.7.2")
+
+    // glide OKHttp implementation
+    implementation 'com.github.bumptech.glide:annotations:4.11.0'
+    implementation "com.github.bumptech.glide:okhttp3-integration:4.11.0"
+
+    //data processing and co-routines
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+
+    //koin
+    implementation "org.koin:koin-core:2.1.5"
+    implementation "org.koin:koin-android:2.1.5"
+    implementation "org.koin:koin-androidx-viewmodel:2.1.5"
+
+    //recyclerview animators
+    implementation 'jp.wasabeef:recyclerview-animators:3.0.0'
+
+    //exif interface - get data from uri file width height
+    implementation "androidx.exifinterface:exifinterface:1.2.0"
+
+}
+
+// [1]
+//https://stackoverflow.com/questions/57442809/how-to-use-androidx-recyclerview-selection-in-androidx-recyclerview-widget-or-h
+//https://developer.android.com/jetpack/androidx/releases/recyclerview

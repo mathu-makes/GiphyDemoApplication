@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/gph_transparent"
+        android:layout_margin="1dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" /> <!-- [1] -->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/playButton"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:fabSize="mini"
+        app:layout_constraintTop_toTopOf="@+id/imageview"
+        app:layout_constraintBottom_toBottomOf="@+id/imageview"
+        app:layout_constraintLeft_toLeftOf="@+id/imageview"
+        app:layout_constraintRight_toRightOf="@+id/imageview"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
+    <!--<CheckBox
+        android:id="@+id/checkBox"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/imageview"
+        app:layout_constraintLeft_toLeftOf="@+id/imageview"
+        android:text="CheckBox" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    [1]
+    https://github.com/android/storage-samples/blob/master/MediaStore/app/src/main/res/layout/gallery_layout.xml
+    android:layout_height="0dp"
+-->
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+<ImageView
+android:id="@+id/imageview"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:elevation="4dp"
+android:scaleType="fitEnd"
+android:adjustViewBounds="true"
+app:layout_constraintLeft_toLeftOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+-->
+
+    <!-- android:layout_margin="1dp" -->
+    <!-- Staggered Grid Recyclerview Example | Android Studio Tutorial | https://www.youtube.com/watch?v=x_6GmFys7hU | 13:42 -->

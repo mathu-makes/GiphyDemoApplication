@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/editView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/gifEditor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/gifView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        android:layout_marginTop="40dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="@id/gifEditor"
+        app:layout_constraintLeft_toLeftOf="@id/gifEditor"
+        app:layout_constraintRight_toRightOf="@id/gifEditor"/> <!--300dp w x 400dp h-->
+
+    <ImageView
+        android:id="@+id/shape"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        android:visibility="invisible"
+        android:background="@drawable/shapes"
+        app:layout_constraintTop_toTopOf="@id/gifView"
+        app:layout_constraintBottom_toBottomOf="@id/gifView"
+        app:layout_constraintLeft_toLeftOf="@id/gifView"
+        app:layout_constraintRight_toRightOf="@id/gifView"/>
+
+    <ImageView
+        android:id="@+id/shapeWide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/shapes"
+        android:scaleType="center"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/gifView"
+        app:layout_constraintStart_toStartOf="@id/gifView"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineR"
+        app:layout_constraintLeft_toLeftOf="@id/gifView"
+        app:layout_constraintRight_toRightOf="@id/gifView"
+        app:layout_constraintTop_toTopOf="@id/gifView" />
+
+    <ImageView
+        android:id="@+id/shapeWideR"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/shapes"
+        android:scaleType="center"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/gifView"
+        app:layout_constraintEnd_toEndOf="@id/gifView"
+        app:layout_constraintRight_toLeftOf="@id/gifView"
+        app:layout_constraintLeft_toRightOf="@id/gifView"
+        app:layout_constraintTop_toTopOf="@id/gifView" />
+
+    <ImageView
+        android:id="@+id/shape_bg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        android:visibility="visible"
+        android:alpha="0.75"
+        android:background="@drawable/shapes_bg"
+        app:layout_constraintTop_toBottomOf="@id/shape"
+        app:layout_constraintBottom_toBottomOf="@id/gifView"
+        app:layout_constraintLeft_toLeftOf="@id/shape"
+        app:layout_constraintRight_toRightOf="@id/shape"/>
+
+    <ImageView
+        android:id="@+id/shape_bgTop"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        android:visibility="visible"
+        android:alpha="0.75"
+        android:background="@drawable/shapes_bg"
+        app:layout_constraintTop_toTopOf="@id/gifView"
+        app:layout_constraintBottom_toTopOf="@id/shape"
+        app:layout_constraintLeft_toLeftOf="@id/shape"
+        app:layout_constraintRight_toRightOf="@id/shape"/>
+
+    <ImageView
+        android:id="@+id/shape_bgLeft"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        android:visibility="visible"
+        android:alpha="0.75"
+        android:background="@drawable/shapes_bg"
+        app:layout_constraintTop_toTopOf="@id/shape"
+        app:layout_constraintBottom_toBottomOf="@id/shape"
+        app:layout_constraintLeft_toLeftOf="@id/gifView"
+        app:layout_constraintRight_toLeftOf="@id/shape"/>
+
+    <ImageView
+        android:id="@+id/shape_bgRight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        android:visibility="visible"
+        android:alpha="0.75"
+        android:background="@drawable/shapes_bg"
+        app:layout_constraintTop_toTopOf="@id/shape"
+        app:layout_constraintBottom_toBottomOf="@id/shape"
+        app:layout_constraintRight_toRightOf="@id/gifView"
+        app:layout_constraintLeft_toRightOf="@id/shape"/>
+
+    <ImageView
+        android:id="@+id/shape_bgLeftL2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        android:visibility="invisible"
+        android:alpha="0.75"
+        android:background="@drawable/shapes_bg"
+        app:layout_constraintTop_toTopOf="@id/shapeWideR"
+        app:layout_constraintBottom_toBottomOf="@id/shapeWideR"
+        app:layout_constraintLeft_toLeftOf="@id/gifView"
+        app:layout_constraintRight_toLeftOf="@id/shapeWideR"/>
+
+    <ImageView
+        android:id="@+id/shape_bgRightR2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        android:visibility="invisible"
+        android:alpha="0.75"
+        android:background="@drawable/shapes_bg"
+        app:layout_constraintTop_toTopOf="@id/shapeWide"
+        app:layout_constraintBottom_toBottomOf="@id/shapeWide"
+        app:layout_constraintRight_toRightOf="@id/gifView"
+        app:layout_constraintLeft_toRightOf="@id/shapeWide"/>
+
+    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/newFab"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="160dp"
+    android:layout_marginEnd="24dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:fabSize="mini"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/ic_add_black_24dp"/>-->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/playFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:fabSize="auto"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@id/gifView"
+        app:layout_constraintRight_toRightOf="@id/gifView"
+        app:layout_constraintLeft_toLeftOf="@id/gifView"
+        app:layout_constraintBottom_toBottomOf="@id/gifView"
+        app:srcCompat="@android:drawable/ic_media_play"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/editFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:fabSize="auto"
+        android:layout_marginBottom="46dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/ic_edit_black_24dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/cropFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:fabSize="auto"
+        android:visibility="invisible"
+        android:layout_marginLeft="54dp"
+        android:layout_marginBottom="76dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/ic_crop_black_24dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/saveFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:fabSize="auto"
+        android:visibility="invisible"
+        android:layout_marginRight="54dp"
+        android:layout_marginBottom="76dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/ic_favorite_black_24dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" /> <!--0.8029197-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" /> <!--0.8029197-->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_red"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+        android:id="@+id/scale1"
+        android:text="1:1"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/gifView"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="160dp" />
+
+    <Button
+        android:id="@+id/scale2"
+        android:text="reset"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/gifView"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="160dp" />
+
+    <Button
+        android:id="@+id/scale3"
+        android:text="3:2"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/gifView"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="160dp" />
+
+    <Button
+        android:id="@+id/crop1"
+        android:text="top"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/gifView"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="160dp" />
+
+    <!--<Button
+        android:id="@+id/crop2"
+        android:text="bottom"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/gifView"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="160dp" />-->
+
+    <Button
+        android:id="@+id/crop2"
+        android:text="bottom"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/gifView"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="160dp" />
+
+    <Button
+        android:id="@+id/crop3"
+        android:text="left"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/gifView"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="160dp" />
+
+    <Button
+        android:id="@+id/crop5"
+        android:text="middle"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/gifView"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="160dp" />
+
+    <Button
+        android:id="@+id/crop4"
+        android:text="right"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/gifView"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="160dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
