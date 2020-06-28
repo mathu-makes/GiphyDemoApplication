@@ -1,6 +1,8 @@
 # GiphyDemoApplication
 Used the Giphy Demo as a starting point and added download feature for storing gifs locally using OkHttp. Glide is used to decode and playback gifs once downloaded.
 
+![GitHub Logo](/images/app-screenshots.jpg)
+
 First steps towards building a companion app for my gesture controlled GIF player.
 Modified from Giphy demo application - the following files contain the additional code blocks I have added:
     
