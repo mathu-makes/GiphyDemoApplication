@@ -15,13 +15,13 @@ Modified from Giphy demo application - the following files contain the additiona
     flex_viewholder_cat.xml
     gif_activity.xml
     
-The goal of this app is to create a fluid experience to downloand GIFs and scale them to a specified screen size.
-OkHttp's network capabilities are used to download GIFs from the Giphy database and stored locally on the Android device.
-Glide is used to handle decoding GIFs and a recyclerview to diplays them to a view. A new activity is launced if a GIF is clicked and can be further edited there.
+The goal of this app was to create a fluid user experience to view and downloand GIFs, scale them to a specified screen size and save the new version.
+OkHttp's network capabilities were used to download GIFs from the Giphy database and store them locally on the Android device.
+Glide was used to handle decoding GIFs and a recyclerview to diplays them to a view. A new activity is launched if a GIF is clicked and can be further edited there.
 
 ROADMAP:
-    Add ability to store cropped area of GIF and scale preferences + ability to save new version
-    Add ability to connect MCU with TinyUSB so can drag over GIFs directly to device
+    Add ability to store cropped area of GIF and scale preferences + ability to save new version.
+    Add ability to connect Android device to MCU with TinyUSB so user can drag over GIFs directly to MCU flash storage or SDcard.
 
 
   
